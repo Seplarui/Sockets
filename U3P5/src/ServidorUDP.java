@@ -23,6 +23,9 @@ public class ServidorUDP {
 				aSocket.receive(request);
 				System.out.println("Recibo cliente: "+ new String(request.getData()));
 
+				DatagramPacket request2= new DatagramPacket(buffer, buffer.length);
+				System.out.println("Recibo cliente 2: "+ new String(request2.getData()));
+
 				DatagramPacket reply= new DatagramPacket(request.getData(),request.getLength(),request.getAddress(), request.getPort());
 				request.getPort();
 				aSocket.send(reply);
